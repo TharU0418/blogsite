@@ -1,13 +1,335 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    background-color: #172554;
+    color: white;
+}
+
+.blog-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .category {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  
+  .post-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .blog-container-main{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+  }
+
+  
+.createPostPage {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+}
+
+.cpContainer {
+  width: 60%;
+  height: auto;
+  padding: 20px;
+  background-color: black;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.cpContainer h1 {
+  text-align: center;
+}
+
+.cpContainer label {
+  font-size: 25px;
+}
+.cpContainer .inputGp {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGp input,
+.inputGp textarea {
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+  background-color: white;
+}
+
+.inputGp input {
+  height: 40px;
+}
+.inputGp textarea {
+  height: 150px;
+}
+
+.cpContainer button {
+  margin-top: 30px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: white;
+  color: rgb(21, 5, 88);
+  width: 14rem;
+  height: 50px;
+  font-weight: 600;
+  padding: 5px;
+}
+input,
+textarea {
+  margin-top: 5px;
+}
+
+
+
+.postblogcontainer{
+  max-width: 60%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 20rem;
+  margin-top: 2rem;
+}
+
+.postblogcontainer  .blog-image {
+  width: 94%;
+  height: 36rem;
+  border-radius: 8px;
+  margin-left: 3rem;
+  margin-bottom: 10px;
+}
+
+.postblogcontainer .blog-txt {
+  background-color: #fff;
+  color: black;
+  padding: 10px;
+  opacity: 0.6;
+  border-radius: 8px;
+}
+
+/* middleImages.css */
+.fade-container {
+  background-color: red;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Change the duration and easing as per your requirement */
+}
+
+.fade-container.show {
+  opacity: 1;
+}
+
+
+@keyframes flipHorizontalTop {
+  from {
+      transform: rotateX(0deg);
+  }
+  to {
+      transform: rotateX(-180deg);
+  }
+}
+/* Define slideInBlurredBottom animation
+@keyframes slideInBlurredBottom {
+  from {
+      transform: translateY(100%);
+      opacity: 0;
+      filter: blur(10px);
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+      filter: blur(0);
+  }
+} */
+
+
+@keyframes flip-horizontal-top-in {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flip-horizontal-top-out {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+#animated-heading {
+  background-color: black;
+  padding: 2px;
+  width: 30%;
+  font-size: 26px;
+  margin-bottom: 2rem;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.flip-in {
+  animation-name: flip-horizontal-top-in;
+}
+
+.flip-out {
+  animation-name: flip-horizontal-top-out;
+}
+
+
+
+#animated-box {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes slide-in-blurred-bottom-in {
+0% {
+  transform: translateY(100px);
+  opacity: 0;
+  filter: blur(10px);
+}
+100% {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
+}
+}
+
+@keyframes slide-in-blurred-bottom-out {
+0% {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
+}
+100% {
+  transform: translateY(100px);
+  opacity: 0;
+  filter: blur(10px);
+}
+}
+.slide-in {
+  animation-name: slide-in-blurred-bottom-in;
+}
+
+.slide-out {
+  animation-name: slide-in-blurred-bottom-out;
+}
+
+
+
+.slider{
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  width: 60%;
+  position: relative;
+  left: 20%;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.carousel__list {
+  align-items: center;
+  display: grid;
+  grid-row-gap: 1.25rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  max-width: 40rem;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  list-style-type: none;
+}
+.carousel__item {
+  grid-column: 1;
+  grid-row: 1;
+  line-height: 1.2;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.carousel__item.active {
+  transform: translateX(0);
+}
+.carousel__item.left {
+  transform: translateX(-110%);
+}
+.carousel__item.right {
+  transform: translateX(110%);
+}
+.carousel__indicator {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row: 2;
+  justify-self: center;
+}
+.carousel__dot {
+  background-color: white;
+  border-radius: 50%;
+  border: 0.0625rem solid #696a6b;
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+.carousel__dot.active {
+  background-color: #696a6b;
+}
+.carousel__citation {
+  display: block;
+  font-size: 0.875rem;
+  font-style: normal;
+  margin-bottom: 1.25rem;
+}
+.carousel__name {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+}
+.carousel__quote {
+  font-style: italic;
+  line-height: 1.5;
 }
